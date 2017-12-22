@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="js/socket.io.js"></script>
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/main.js"></script>
+  <title>聊天室練習2</title>
+  <style>
+    form{
+      background-color: rgb(255, 255, 255);
+      position: absolute;
+      top:90%;
+      left:30%;
+      padding:3px;
+      width:40%;
+    }
+    form input{
+      width:80%;
+    }
+    ul{
+      background-color: lightblue;
+      position: absolute;
+      left:30%;
+      width:40%;
+    }
+    #myul { list-style-type: none; margin: 0; padding: 0; }
+    #myul li { padding: 5px 10px; }
+    #myul li:nth-child(odd) { background: rgb(228, 255, 76); }
+
+    form button{
+      width:10%;
+    }
+
+  </style>
+</head>
+<body>
+  <ul id="myul">
+  </ul>
+  <form action="">
+    <input type="text" id="myinput">
+    <button id="mybtn">Send</button>
+  </form>
+</body>
+</html>

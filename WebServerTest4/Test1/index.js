@@ -20,6 +20,8 @@ server.listen(PORT, function () {
 io.on('connection', function (socket) {
     console.log('a user is connect' + socket.id);
 
+    user++;
+    console.log('目前連接人數:'+user);
     //當使用者按下了send按鈕後，會將input中的值傳回server
     socket.on('send user name', function (username) {
 
@@ -37,12 +39,20 @@ io.on('connection', function (socket) {
         for (var i = 0; i < userid.length; i++) {
             for (var j = i + 1; j < userid.length; j++) {
                 if (userid[i] === userid[j]) {
-                    console.log('is repeat')
-                    userid.splice(j, 1)
+                    console.log('is repeat');
+                    userid.splice(j, 1);
                 }
             }
         }
-        console.log(userid.join());
+        console.log("目前陣列中存有的暱稱:"+userid.join());
+
+        //io.sockets.connected[socket.id].emit('sucess', username);
+
     });
-    
+/*
+    socket.on('disconnect',function(){
+        user --;
+        console.log('目前連接數:'+user);
+    });
+*/
 });
